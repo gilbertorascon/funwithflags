@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun With Flags</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary shadow">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        Fun With Flags
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-flag-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001" />
+                        </svg>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                        <div class="navbar-nav text-center">
+                            <a class="nav-link" href="#filters">View Flags</a>
+                            <a class="nav-link" href="https://restcountries.com/" target="_black">API</a>
+                            <a class="nav-link" href="https://github.com/gilbertorascon/funwithflags">Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="py-5">
+            <section id="hero" class="min-vh-100 d-flex justify-content-center align-items-center mb-1 mb-md-5">
+                <div class="hero_text container text-white text-center">
+                    <h1 class="fw-bold">Welcome To Fun With Flags!</h1>
+                    <h2 class="fw-bold">Check out the flags of 250 countries below. </h2>
+                    <a href="#filters" class="btn btn-dark fw-bold border">View Flags</a>
+                </div>
+            </section>
+            <section id="filters" class="container-fluid mb-3 mb-lg-5 pt-5">
+                <h3 class="d-none d-md-block pt-5 text-center">You can search a flag by country name or filter flags by
+                    region.
+                    <br>
+                    Don't forget to click the flag image for some quick facts!
+                </h3>
+                <div class="d-flex flex-column flex-md-row gap-3 gap-md-0 justify-content-between pt-5">
+                    <div class="form-group flex-column flex-md-row col-auto d-flex align-items-center">
+                        <label for="search" class="form-label col-md-auto m-0">Search By Official Name</label>
+                        <input type="text" name="search" id="search" class="form-control ms-md-3">
+                    </div>
+                    <div class="form-group flex-column flex-md-row col-auto d-flex align-items-center">
+                        <label for="region" class="form-label col-md-auto m-0">Filter By Region</label>
+                        <select name="region" id="region" class="form-select ms-md-3">
+                            <option value="All">All</option>
+                            <option value="Americas">Americas</option>
+                            <option value="Antarctic">Antarctic</option>
+                            <option value="Africa">Africa</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Oceania">Oceania</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            <section class="container-fluid min-vh-100">
+                <div id="country_results" class="row row-gap-3">
+                </div>
+                <a href="#filters" id="to_top" class="btn btn-dark">To Top</a>
+            </section>
+        </main>
+        <div class="container-fluid">
+            <footer class="d-flex justify-content-center align-items-center py-4 border-top">
+                <a href="https://github.com/gilbertorascon/funwithflags" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#333" class="bi bi-github"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                    </svg>
+                </a>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
